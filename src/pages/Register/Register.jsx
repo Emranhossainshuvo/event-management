@@ -1,7 +1,11 @@
 import { validatePassword } from "firebase/auth";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthProvider, { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
+
+    const {createUser} = useContext(AuthContext)
 
     const hanldeRegister = e => {
         e.preventDefault()
@@ -9,7 +13,12 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form .password.value;
-        console.log(name, email, password)
+        createUser(email, password)
+        .then(result => {
+            const user = result.user; 
+            console.log(user)
+        }
+        )
     }
 
 return (

@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
 
+    const handleLogin = e => {
+        e.preventDefault(); 
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+    }
 
     return (
         <section className="h-[100vh] flex items-center justify-center bg-[#31473a]">
@@ -10,6 +17,7 @@ const Login = () => {
                 <h3 className="text-center text-3xl font-semibold mb-2 mt-3">Event management</h3>
                 <p className="text-center mb-4 text-xl font-semibold">Login</p>
                 <form
+                onSubmit={handleLogin}
                   className="flex flex-col gap-7 px-10">
                     <input placeholder="Email" className="h-10 outline-none ps-3 rounded-md" type="email" name="email" id="" />
                     <input placeholder="Password" className="h-10 outline-none ps-3 rounded-md" type="password" name="password" id="" />
