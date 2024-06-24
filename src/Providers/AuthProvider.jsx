@@ -24,7 +24,8 @@ const AuthProvider = ({children}) => {
 
     const authData= {
         createUser,
-        logInUser
+        logInUser,
+        user
     }
 
     useEffect(() => {
