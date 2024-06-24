@@ -1,39 +1,23 @@
-// import { useContext } from "react";
-// import { Link, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../Providers/AuthProvider";
-
+import { validatePassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 
 const Register = () => {
 
-    // const {createUser} = useContext(AuthContext); 
-    // const navigate = useNavigate();
+    const hanldeRegister = e => {
+        e.preventDefault()
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form .password.value;
+        console.log(name, email, password)
+    }
 
-
-    // const handleSubmit =(e) => {
-    //     e.preventDefault();
-
-    //     const form = e.target; 
-    //     const name = form.name.value;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     const file = form.file.value;
-    //     createUser(email, password)
-    //     .then(result => {
-    //         const user = result.user;
-    //         console.log(user)
-    //         navigate("/")
-    //     })
-        
-    // }
-
-
-    return (
+return (
         <section className="bg-[#f1f1f2] rounded-xl">
             <h3 className="text-center text-3xl font-semibold mb-2 mt-3">Talks chat</h3>
             <p className="text-center mb-4 text-xl font-semibold">Register</p>
             <form
-             //onSubmit={handleSubmit}
+            onSubmit={hanldeRegister}
               className="flex flex-col gap-7 px-10">
                 <input placeholder="Name" className="h-10 ps-3 outline-none rounded-md" type="text" name="name" id="" />
                 <input placeholder="Email" className="h-10 ps-3 outline-none rounded-md" type="email" name="email" id="" />
