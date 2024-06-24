@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
 
-    const navItems = 
+    const navItems =
 
-    <>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Appointment</li>
-    </>
+        <>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Appointment</li>
+        </>
 
 
     return (
@@ -34,18 +35,20 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box gap-3 z-[1] mt-3 w-52 p-2 shadow">
-                                {navItems}
+                            {navItems}
                         </ul>
                     </div>
                     <a className="text-xl">Event management</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu gap-5 menu-horizontal px-1">
-                        {navItems} 
+                        {navItems}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    <Link to="/login">
+                        <a className="btn">Login</a>
+                    </Link>
                 </div>
             </div>
         </>
